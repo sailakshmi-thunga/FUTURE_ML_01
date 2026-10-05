@@ -1,2 +1,267 @@
-# FUTURE_ML_01
-Developed a machine learning-based sales forecasting system using Python and Scikit-learn. Performed EDA, feature engineering, and Random Forest modeling to predict demand. Evaluated performance using MAE, RMSE, R², and MAPE and generated 30-day sales forecasts with business insights.
+# Sales & Demand Forecasting for Businesses
+
+## Project Overview
+
+This project develops a machine learning solution to forecast future
+business sales using historical sales data.
+
+The project covers the complete forecasting workflow:
+
+-   Data cleaning
+-   Exploratory data analysis
+-   Time-based feature engineering
+-   Lag and rolling features
+-   Machine learning model training
+-   Model evaluation and error analysis
+-   Future sales forecasting
+-   Business-friendly visualizations
+-   Interactive Plotly visualizations
+-   Business KPI reporting
+
+## Objectives
+
+The main objectives of this project are to:
+
+1.  Analyze historical sales patterns.
+2.  Identify time-based factors affecting sales.
+3.  Build a machine learning model for sales forecasting.
+4.  Evaluate forecasting performance using standard regression metrics.
+5.  Generate a 30-day future sales forecast.
+6.  Present the results through clear business-oriented visualizations.
+
+## Technologies Used
+
+-   **Python**
+-   **Pandas**
+-   **NumPy**
+-   **Scikit-learn**
+-   **Matplotlib**
+-   **Seaborn**
+-   **Plotly**
+-   **Jupyter Notebook**
+
+## Machine Learning Model
+
+The project uses:
+
+**Random Forest Regression**
+
+The model is trained using a chronological train-test split so that
+future information is not used when training on past data.
+
+### Features
+
+The model uses the following features:
+
+-   Day
+-   Month
+-   Quarter
+-   Week of Year
+-   Day of Week
+-   Weekend Indicator
+-   Promotion
+-   1-day Sales Lag
+-   7-day Sales Lag
+-   14-day Sales Lag
+-   28-day Sales Lag
+-   7-day Rolling Mean
+-   14-day Rolling Mean
+-   28-day Rolling Mean
+-   7-day Rolling Standard Deviation
+
+## Project Workflow
+
+``` text
+Historical Sales Data
+        |
+        v
+Data Cleaning
+        |
+        v
+Exploratory Data Analysis
+        |
+        v
+Time-Based Feature Engineering
+        |
+        v
+Lag & Rolling Features
+        |
+        v
+Train/Test Split
+        |
+        v
+Random Forest Regression
+        |
+        v
+Model Evaluation
+        |
+        v
+Future Sales Forecast
+        |
+        v
+Business Visualizations & Insights
+```
+
+## Model Evaluation
+
+The model is evaluated using:
+
+-   **MAE (Mean Absolute Error)**
+-   **RMSE (Root Mean Squared Error)**
+-   **R² Score**
+-   **MAPE (Mean Absolute Percentage Error)**
+
+### Results from the completed notebook
+
+  Metric       Result
+  ---------- --------
+  MAE           47.27
+  RMSE          61.82
+  R² Score     0.6497
+  MAPE          5.78%
+
+The completed notebook used **246 historical records after time-based
+lag/rolling feature preparation**, with **196 training samples** and
+**50 testing samples**.
+
+## 30-Day Sales Forecast
+
+The completed notebook generated a 30-day future sales forecast.
+
+  Forecast Measure            Result
+  ------------------------ ---------
+  Forecast Horizon           30 days
+  Expected Total Sales        22,922
+  Average Daily Forecast      764.06
+
+The highest forecasted sales date was **2026-10-03**, while the lowest
+forecasted sales date was **2026-10-30**.
+
+## Feature Importance
+
+The most important features identified by the Random Forest model were:
+
+  Feature            Importance
+  ---------------- ------------
+  Promotion              0.4066
+  Lag_14                 0.1488
+  Lag_7                  0.1313
+  Lag_28                 0.0617
+  RollingMean_28         0.0510
+
+This indicates that promotion information and recent historical sales
+patterns play an important role in the model's predictions.
+
+## Visualizations
+
+The notebook includes:
+
+-   Daily sales trend
+-   Monthly sales trend
+-   Average sales by day of week
+-   Promotion vs. sales comparison
+-   Feature correlation heatmap
+-   Actual vs. predicted sales
+-   Prediction error distribution
+-   Feature importance
+-   30-day future sales forecast
+-   Interactive Plotly sales visualization
+-   Business KPI dashboard
+
+## Business Applications
+
+The forecast can support business decisions such as:
+
+-   **Inventory planning** --- prepare stock according to expected
+    demand.
+-   **Staff planning** --- allocate employees during higher-demand
+    periods.
+-   **Promotion planning** --- identify periods where promotions may be
+    useful.
+-   **Sales planning** --- estimate expected future sales.
+-   **Demand monitoring** --- continuously compare actual sales with
+    predictions.
+
+## Project Structure
+
+``` text
+sales-demand-forecasting/
+│
+├── sales_demand_forecasting_completed.ipynb
+├── README.md
+├── sales_forecast_30_days.csv
+├── model_predictions.csv
+└── feature_importance.csv
+```
+
+> The CSV files are generated by the notebook after execution.
+
+## How to Run the Project
+
+### 1. Clone the repository
+
+``` bash
+git clone https://github.com/YOUR-USERNAME/sales-demand-forecasting.git
+```
+
+### 2. Open the project folder
+
+``` bash
+cd sales-demand-forecasting
+```
+
+### 3. Install the required libraries
+
+``` bash
+pip install pandas numpy matplotlib seaborn scikit-learn plotly jupyter
+```
+
+### 4. Start Jupyter Notebook
+
+``` bash
+jupyter notebook
+```
+
+### 5. Open the notebook
+
+Open:
+
+``` text
+sales_demand_forecasting_completed.ipynb
+```
+
+Run the notebook cells from top to bottom.
+
+## Outputs
+
+After running the notebook, the project produces:
+
+-   Model evaluation metrics
+-   Actual vs. predicted sales
+-   Prediction error analysis
+-   Feature importance results
+-   30-day future sales forecast
+-   Business forecast summary
+-   Interactive visualizations
+-   KPI dashboard
+-   CSV files containing predictions and forecast results
+
+## Future Improvements
+
+The project can be extended by:
+
+-   Using real company sales data.
+-   Testing XGBoost or LightGBM models.
+-   Comparing Random Forest with dedicated time-series models such as
+    ARIMA or Prophet.
+-   Adding product, region, price, holiday, and customer-level features.
+-   Adding automated model retraining.
+-   Deploying the forecasting model using FastAPI.
+-   Creating a Streamlit dashboard.
+-   Deploying the application to AWS.
+
+## Author
+
+**Thunga Sai Lakshmi**
+
+Computer Science Engineering Graduate
